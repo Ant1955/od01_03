@@ -1,3 +1,4 @@
+import time, random
 def quick_sort(s):
    if len(s) <= 1:
        return s
@@ -9,4 +10,10 @@ def quick_sort(s):
 
    return quick_sort(left) + center + quick_sort(right)
 
-print(quick_sort([5, 2, 9, 0, 1, 5, 3]))
+a = [random.randint(0, 1000) for _ in range(100)]
+start_time = time.time()
+quick_sort(a)
+end_time = time.time()
+print(a)
+print(f"Pivot время выполнения: {(end_time-start_time) * 1000000:.12f} наносекунд")
+
